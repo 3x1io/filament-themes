@@ -4,7 +4,6 @@ namespace io3x1\FilamentThemes\Settings;
 
 use Spatie\LaravelSettings\Settings;
 
-
 class ThemesSettings extends Settings
 {
     public string $theme_name;

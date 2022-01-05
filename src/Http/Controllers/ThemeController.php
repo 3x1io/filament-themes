@@ -4,7 +4,7 @@ namespace io3x1\FilamentThemes\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use FilamentThemes\Settings\ThemesSettings;
+use io3x1\FilamentThemes\Settings\ThemesSettings;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;

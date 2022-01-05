@@ -10,7 +10,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "io3x1\\FilamentThemes\\": "src/"
+            "io3x1\\FilamentThemes\\": "src/",
+            "Themes\\": "resources/views/themes"
         }
     },
     "authors": [
@@ -24,7 +25,8 @@
     "require": {
         "php": "^8.0",
         "filament/filament": "^2.8",
-        "filament/spatie-laravel-settings-plugin": "^2.8"
+        "filament/spatie-laravel-settings-plugin": "^2.8",
+        "spatie/laravel-package-tools": "^1.10"
     },
     "config": {
         "sort-packages": true

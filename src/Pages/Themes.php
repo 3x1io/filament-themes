@@ -8,12 +8,12 @@ use Filament\Pages\Actions\ButtonAction;
 
 class Themes extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-color-swatch';
 
     protected static string $view = 'filament.pages.themes';
 
 
-    protected static ?string $navigationGroup = 'Themes';
+    protected static ?string $navigationGroup = 'Settings';
 
 
     protected function getViewData(): array

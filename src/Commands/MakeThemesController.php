@@ -1,11 +1,11 @@
 <?php
 
-namespace io3x1\FilamentThemes\Console\Commands;
+namespace io3x1\FilamentThemes\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class ThemesController extends Command
+class MakeThemesController extends Command
 {
     /**
      * The name and signature of the console command.
@@ -48,7 +48,7 @@ class ThemesController extends Command
             $setFileName = $controllerName . '.php';
 
 
-            $getFileContent = view('templates.controller', [
+            $getFileContent = view('filament-themes-templates::controller', [
                 "controllerNameSpace" => $setNameSpace,
                 "controllerName" => $controllerName
             ]);
