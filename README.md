@@ -1,20 +1,28 @@
-# filament-themes
+# Filament Theme Manager
 
 FrontEnd Themes Manager For Filament Admin
 
-- [Create New Theme](#create)
-- [Theme Helpers](#helpers)
-- [Theme Controllers](#controllers)
+## Installation
 
-# Theme Manager
+You can install the package via composer:
 
-our framework support front theme by easy way you can add a new theme by this way
+```bash
+composer require 3x1io/filament-themes
+```
 
-<hr>
+Then publish the assets:
+
+`````bash
+php artisan vendor:publish --provider="filament-themes"
+```
+
+Run migration:
+
+````bash
+php artisan migrate
+```
 
 ## Create New Theme
-
-<a href="#create"></a>
 
 to create a new theme first of all you need to create a new folder inside `resources/views/themes` with you theme name and this name <b>must be without spaces</b>, inside this folder create a new json file named `info.json` and on this file put this json object
 
@@ -30,7 +38,7 @@ to create a new theme first of all you need to create a new folder inside `resou
   "requires": [],
   "image": "placeholder.webp"
 }
-```
+`````
 
 > {info} the `aliases` must be the same as theme folder name
 
@@ -52,8 +60,6 @@ the last thing we must to do it to add the assets folder of the theme to `public
 <hr>
 
 ## Theme Helpers
-
-<a href="#helpers"></a>
 
 our theme feature has some helpers to make it easy to make a frontend theme like theme assets url
 
@@ -85,8 +91,6 @@ this function take a `number` and convert it to money style with a currency symb
 
 ## Generate a Theme Controller
 
-<a href="#controllers"></a>
-
 our themes feature support artisan command to generate a new theme controller you can use this command like
 
 ```bash
@@ -94,3 +98,15 @@ php artisan themes:controller CONTROLLER_NAME THEME_NAME
 ```
 
 where `CONTROLLER_NAME` is the name of the controller & `THEME_NAME` is the name of the theme
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Credits
+
+- [3x1](https://github.com/3x1io)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
