@@ -14,6 +14,8 @@ our framework support front theme by easy way you can add a new theme by this wa
 
 ## Create New Theme
 
+<a href="#create"></a>
+
 to create a new theme first of all you need to create a new folder inside `resources/views/themes` with you theme name and this name <b>must be without spaces</b>, inside this folder create a new json file named `info.json` and on this file put this json object
 
 ```json
@@ -51,6 +53,8 @@ the last thing we must to do it to add the assets folder of the theme to `public
 
 ## Theme Helpers
 
+<a href="#helpers"></a>
+
 our theme feature has some helpers to make it easy to make a frontend theme like theme assets url
 
 ```php
@@ -80,6 +84,8 @@ this function take a `number` and convert it to money style with a currency symb
 <hr>
 
 ## Generate a Theme Controller
+
+<a href="#controllers"></a>
 
 our themes feature support artisan command to generate a new theme controller you can use this command like
 
