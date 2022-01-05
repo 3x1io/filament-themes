@@ -10,17 +10,23 @@ You can install the package via composer:
 composer require 3x1io/filament-themes
 ```
 
+Run migration:
+
+```bash
+php artisan vendor:publish --provider="Spatie\LaravelSettings\LaravelSettingsServiceProvider" --tag="migrations"
+php artisan migrate
+```
+
 Then publish the assets:
 
 ```bash
-php artisan vendor:publish --provider="filament-themes"
+php artisan vendor:publish --tag="filament-themes"
 ```
 
 Run migration:
 
 ```bash
 php artisan migrate
-
 ```
 
 ## Create New Theme
