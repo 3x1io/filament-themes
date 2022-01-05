@@ -29,6 +29,12 @@ Run migration:
 php artisan migrate
 ```
 
+Remove default route from routes/web.php
+
+```bash
+php artisan optimize
+```
+
 ## Create New Theme
 
 to create a new theme first of all you need to create a new folder inside `resources/views/themes` with you theme name and this name <b>must be without spaces</b>, inside this folder create a new json file named `info.json` and on this file put this json object
