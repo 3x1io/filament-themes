@@ -12,14 +12,15 @@ composer require 3x1io/filament-themes
 
 Then publish the assets:
 
-`````bash
+```bash
 php artisan vendor:publish --provider="filament-themes"
 ```
 
 Run migration:
 
-````bash
+```bash
 php artisan migrate
+
 ```
 
 ## Create New Theme
@@ -38,7 +39,7 @@ to create a new theme first of all you need to create a new folder inside `resou
   "requires": [],
   "image": "placeholder.webp"
 }
-`````
+```
 
 > {info} the `aliases` must be the same as theme folder name
 
