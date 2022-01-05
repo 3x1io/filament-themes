@@ -1,0 +1,40 @@
+{
+    "name": "3x1io/filament-themes",
+    "description": "FrontEnd Themes Manager For Filament Admin",
+    "keywords": [
+        "laravel",
+        "themes",
+        "filament"
+    ],
+    "homepage": "https://3x1.io",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "io3x1\\FilamentThemes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "3x1",
+            "email": "info@3x1.io",
+            "role": "CEO"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.8",
+        "filament/spatie-laravel-settings-plugin": "^2.8"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "io3x1\\FilamentThemes\\FilamentThemesProvider"
+            ]
+        }
+    },
+    "prefer-stable": true
+}
