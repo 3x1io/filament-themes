@@ -35,6 +35,23 @@ Remove default route from routes/web.php
 php artisan optimize
 ```
 
+add to your composer.json
+
+```json
+"autoload": {
+    "psr-4": {
+        "App\\": "app/",
+        "Database\\Factories\\": "database/factories/",
+        "Database\\Seeders\\": "database/seeders/",
+        "Themes\\": "resources/views/themes/"
+    }
+},
+```
+
+```bash
+composer dump-autoload
+```
+
 ## Create New Theme
 
 to create a new theme first of all you need to create a new folder inside `resources/views/themes` with you theme name and this name <b>must be without spaces</b>, inside this folder create a new json file named `info.json` and on this file put this json object
