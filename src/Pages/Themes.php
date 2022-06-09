@@ -34,4 +34,14 @@ class Themes extends Page
             "data" => $data
         ];
     }
+
+    protected static function shouldRegisterNavigation(): bool
+    {
+        return auth()->user()->can('view_themes');
+    }
+
+    public function mount(): void
+    {
+        abort_unless(auth()->user()->can('view_themes'), 403);
+    }    
 }
