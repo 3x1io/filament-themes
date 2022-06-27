@@ -18,14 +18,14 @@ class Themes extends Page
 
     protected function getViewData(): array
     {
-        $themes =  File::directories(base_path() . '/resources/views/themes');
+        $themes =  File::directories(base_path() . (string) str('/resources/views/themes')->replace('/', DIRECTORY_SEPARATOR));
         $data = [];
         if ($themes) {
             foreach ($themes as $key => $item) {
                 array_push($data, [
                     "id" => $key + 1,
                     "path" => $item,
-                    "info" => json_decode(File::get($item . '/info.json'))
+                    "info" => json_decode(File::get($item . DIRECTORY_SEPARATOR .'info.json'))
                 ]);
             }
         }
