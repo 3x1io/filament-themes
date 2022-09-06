@@ -1,17 +1,12 @@
 <?php
 
-use Spatie\LaravelSettings\Models\SettingsProperty;
+use io3x1\FilamentThemes\Settings\ThemesSettings;
 
 
 if (!function_exists('setting')) {
     function setting($key)
     {
-        $setting = SettingsProperty::where('name', $key)->first();
-        if ($setting) {
-            return json_decode($setting->payload);
-        } else {
-            return false;
-        }
+        return app(ThemesSettings::class)->{$key};
     }
 }
 //Themes Functions
