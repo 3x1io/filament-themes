@@ -6,7 +6,12 @@ use io3x1\FilamentThemes\Settings\ThemesSettings;
 if (!function_exists('setting')) {
     function setting($key)
     {
-        return app(ThemesSettings::class)->{$key};
+        $setting = \Spatie\LaravelSettings\Models\SettingsProperty::where('name', $key)->first();
+        if($setting){
+            return json_decode($setting->payload);
+        }
+
+        return false;
     }
 }
 //Themes Functions

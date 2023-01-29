@@ -10,38 +10,46 @@ class Themes extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-color-swatch';
 
-    protected static string $view = 'filament.pages.themes';
-
+    protected static string $view = 'filament-themes::filament.pages.themes';
 
     protected static ?string $navigationGroup = 'Settings';
 
 
+    /**
+     * @return string|null
+     */
+    protected static function getNavigationGroup(): ?string
+    {
+        return config('filament-themes.group') ?? static::$navigationGroup;
+    }
+
+    /**
+     * @return array[]
+     */
     protected function getViewData(): array
     {
         $themes =  File::directories(base_path() . (string) str('/resources/views/themes')->replace('/', DIRECTORY_SEPARATOR));
         $data = [];
         if ($themes) {
             foreach ($themes as $key => $item) {
-                array_push($data, [
+                $data[] = [
                     "id" => $key + 1,
                     "path" => $item,
-                    "info" => json_decode(File::get($item . DIRECTORY_SEPARATOR .'info.json'))
-                ]);
+                    "info" => json_decode(File::get($item . DIRECTORY_SEPARATOR . 'info.json'))
+                ];
             }
         }
 
-        return [
-            "data" => $data
-        ];
+        return compact('data');
     }
 
     protected static function shouldRegisterNavigation(): bool
     {
-        return auth()->user()->can('view_themes');
+        return auth()->user()->can('page_Themes');
     }
 
     public function mount(): void
     {
-        abort_unless(auth()->user()->can('view_themes'), 403);
-    }    
+        abort_unless(auth()->user()->can('page_Themes'), 403);
+    }
 }

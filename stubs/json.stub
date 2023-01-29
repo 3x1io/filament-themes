@@ -1,0 +1,13 @@
+{
+    "name": {
+        "en": "{{ name }}"
+    },
+    "description": {
+        "en": "{{ description }}"
+    },
+    "keywords": [],
+    "aliases": "{{ aliases }}",
+    "files": [],
+    "requires": [],
+    "image": "placeholder.webp"
+}

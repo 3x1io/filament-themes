@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['web'])->group(static function () {
-    Route::namespace(theme_namespace())->name('theme/')->group(static function () {
-        Route::get('/',                                             'HomeController@index')->name('index');
+    Route::namespace(theme_namespace())->name('themes.{{ name }}.')->group(static function () {
+        Route::get('/', '{{ controller }}@index')->name('index');
     });
 });

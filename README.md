@@ -1,3 +1,5 @@
+![Screenshot of Login](./art/screenshot.png)
+
 # Filament Theme Manager
 
 FrontEnd Themes Manager For Filament Admin
@@ -14,13 +16,8 @@ Run migration:
 
 ```bash
 php artisan vendor:publish --provider="Spatie\LaravelSettings\LaravelSettingsServiceProvider" --tag="migrations"
-php artisan migrate
-```
-
-Then publish the assets:
-
-```bash
-php artisan vendor:publish --tag="filament-themes"
+php artisan vendor:publish --tag="filament-themes-assets"
+php artisan vendor:publish --tag="filament-themes-migrations"
 ```
 
 Run migration:
@@ -54,38 +51,17 @@ composer dump-autoload
 
 ## Create New Theme
 
-to create a new theme first of all you need to create a new folder inside `resources/views/themes` with you theme name and this name <b>must be without spaces</b>, inside this folder create a new json file named `info.json` and on this file put this json object
+to create a new theme just this this command
 
-```json
-{
-  "name": "3x1 Theme",
-  "ar": "ثري اكس ون ثيم",
-  "description": "3x1 Theme Is Default Theme Of 3x1 Framework",
-  "description_ar": "الثيم الافتراضي لنطاق عمل 3x1",
-  "keywords": [],
-  "aliases": "3x1",
-  "files": [],
-  "requires": [],
-  "image": "placeholder.webp"
-}
+```bash
+php artisan filament-themes:generate
 ```
 
-> {info} the `aliases` must be the same as theme folder name
+it will ask you for the theme name and the theme description
 
-now we need to add some folders & files inside the theme main folder:
+and you will get your new theme folder on path `resources/views/themes/THEME_NAME`
 
-1. `controller` <small>this folder use to add a controllers to theme</small>
-2. `routes/web.php` <small>this file use to add a routes for this theme</small>
-3. `layouts/app.blade.php` <small>this file use as main layout of the theme</small>
-4. `pages/home.blade.php` <small>this file use as homepage</small>
-
-you can include a file in a head of your theme to support SEO this by use this code inside `<head></head>`
-
-```php
-@include('includes.meta')
-```
-
-the last thing we must to do it to add the assets folder of the theme to `public/themes/THEME_NAME` where `THEME_NAME` is the name of the theme.
+and your assets folder on path `public/themes/THEME_NAME`
 
 <hr>
 
@@ -124,10 +100,12 @@ this function take a `number` and convert it to money style with a currency symb
 our themes feature support artisan command to generate a new theme controller you can use this command like
 
 ```bash
-php artisan themes:controller CONTROLLER_NAME THEME_NAME
+php artisan filament-themes:controller
 ```
 
-where `CONTROLLER_NAME` is the name of the controller & `THEME_NAME` is the name of the theme
+i will ask you about Theme Name and Controller Name
+
+**Note:** the controller name must be in `PascalCase` without `Controller` word on the end because we attach it automatically
 
 ## Changelog
 
@@ -135,7 +113,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Credits
 
-- [3x1](https://github.com/3x1io)
+- [Fady Mondy](https://github.com/3x1io)
 
 ## License
 

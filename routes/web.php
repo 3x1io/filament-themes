@@ -17,5 +17,9 @@ try {
 } catch (Exception $exception) {
 }
 
+Route::middleware('web')->name('admin.themes.')->prefix('admin/themes')->group(static function(){
+    Route::get('active', [ThemeController::class, 'active'])->name('active');
+    Route::post('{theme}/delete', [ThemeController::class, 'destroy'])->name('destroy');
+});
 
-Route::get('admin/themes/active', [ThemeController::class, 'active'])->middleware('web');
+
