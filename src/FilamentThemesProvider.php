@@ -5,7 +5,7 @@ namespace io3x1\FilamentThemes;
 use Illuminate\Support\ServiceProvider;
 use Filament\PluginServiceProvider;
 use io3x1\FilamentThemes\Commands\GenerateTheme;
-use io3x1\FilamentThemes\Commands\GenerateThemeConrtoller;
+use io3x1\FilamentThemes\Commands\GenerateThemeController;
 
 include 'helpers.php';
 
@@ -21,7 +21,7 @@ class FilamentThemesProvider extends PluginServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                GenerateThemeConrtoller::class,
+                GenerateThemeController::class,
                 GenerateTheme::class,
             ]);
         }
