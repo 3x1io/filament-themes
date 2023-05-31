@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use io3x1\FilamentThemes\Services\GenerateController;
 use Queents\ConsoleHelpers\Traits\HandleStub;
 
-class GenerateThemeConrtoller extends Command
+class GenerateThemeController extends Command
 {
     use HandleStub;
 
