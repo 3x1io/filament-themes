@@ -4,8 +4,13 @@
         @foreach ($data as $theme)
         <x-filament::card description="welcome">
             <x-filament::card.heading>
-                {{ $theme['info']->name->{app()->getLocale()} }}
-                <p class="text-sm text-gray-400">{{ $theme['info']->description->{app()->getLocale()} }}</p>
+                @php
+                    $themeName = $theme['info']->{app()->getLocale()} ?? __($theme['info']->name ?? '');
+                    $themeDescriptionLocale = 'description_'.app()->getLocale();
+                    $themeDescription = $theme['info']->{$themeDescriptionLocale} ?? __($theme['info']->description ?? '');
+                @endphp
+                {{ $themeName }}
+                <p class="text-sm text-gray-400">{{ $themeDescription }}</p>
             </x-filament::card.heading>
             <x-filament::hr />
             <img src="{{url($theme['info']->image)}}" />
